@@ -1,5 +1,5 @@
 <template>
-    <div class="character-card" v-if="character">
+    <div class="character-card" v-if="character" @click="goToCharacterPage">
         <div class="row text-center">
             <div class="col">
                 <div class="character-image-section">
@@ -37,6 +37,9 @@ export default {
     methods: {
         capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
+        },
+        goToCharacterPage() {
+            this.$router.push({ name: 'character', params: { id: this.character.id } })
         }
     },
     components: {

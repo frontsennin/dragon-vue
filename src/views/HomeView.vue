@@ -37,7 +37,7 @@ export default {
       this.charactersList = await getData('charactersList');
       if (this.charactersList.length === 0) {
         try {
-          const { data } = await dragonballService.getAllCharacterDetails();
+          const { data } = await dragonballService.getAllCharacters();
           this.charactersList = data.items;
           await saveData('charactersList', data.items);
         } catch (error) {

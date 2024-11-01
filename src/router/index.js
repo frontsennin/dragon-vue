@@ -1,9 +1,10 @@
-import HomeView from '@/views/HomeView.vue';
+import HomeView from '@/views/HomeView';
+import CharacterDetail from '@/views/CharacterDetail';
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
     {
-        path: '/', 
+        path: '/',
         redirect: '/home'
     },
     {
@@ -11,8 +12,9 @@ const routes = [
         name: "Dragon Ball Home",
         component: HomeView
     },
+    { path: '/character/:id', component: CharacterDetail, name: 'character' },
     { path: '/:pathMatch(.*)*', redirect: '/home' }
-  
+
 ]
 
 const router = createRouter({

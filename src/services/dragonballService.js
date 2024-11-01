@@ -17,8 +17,11 @@ apiClient.interceptors.response.use(
 );
 
 const dragonballService = {
-    getAllCharacterDetails() {
+    getAllCharacters() {
         return apiClient.get(`/characters?limit=2000`)
+    },
+    getCharacterById(id) {
+        return apiClient.get(`/characters/${id}`)
     },
 };
 
