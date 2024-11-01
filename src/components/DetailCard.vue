@@ -20,7 +20,7 @@
                         <CharacterPlanetInfo :character="character" />
                     </div>
                 </div>
-                <div class="row mt-5">
+                <div class="row mt-5" v-if="character.transformations && character.transformations.length > 0">
                     <div class="col">
                         <strong class="transformations-label">Tranformações</strong>
                         <div class="row">
