@@ -14,17 +14,14 @@
         </div>
         <div class="row mt-2">
             <div class="col">
-                <InfoText :value="`${character.race} - ${character.gender}`"/>
-                <InfoText :title="'Ki Inicial:'" :value="character.ki"/>
-                <InfoText :title="'Ki Máximo:'" :value="character.maxKi"/>
-                <InfoText :title="'Afiliação:'" :value="character.affiliation"/>
+                <CharacterBasicInfo :character="character"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import InfoText from '@/components/InfoText'
+import CharacterBasicInfo from '@/components/CharacterBasicInfo'
 
 export default {
     name: 'CharacterCard',
@@ -43,7 +40,7 @@ export default {
         }
     },
     components: {
-        InfoText
+        CharacterBasicInfo
     }
 };
 </script>

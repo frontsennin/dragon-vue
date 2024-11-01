@@ -1,15 +1,21 @@
 <template>
-    <div v-if="character">
-        <h1>{{ character.name }}</h1>
+    <div v-if="character" class="row align-items-center">
+        <div class="col">
+            <DetailCard :character="character"/>
+        </div>
     </div>
 </template>
 
 <script>
+import DetailCard from '@/components/DetailCard';
 import dragonballService from '@/services/dragonballService';
 import { errorToastr } from '@/services/helperService';
 
 export default {
     name: 'CharacterDetail',
+    components: {
+        DetailCard
+    },
     data() {
         return {
             character: null
