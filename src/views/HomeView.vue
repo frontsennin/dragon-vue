@@ -1,7 +1,4 @@
 <template>
-  <div class="form-group">
-    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" @input="handleChange">
-  </div>
   <div class="container" v-if="charactersList.length > 0">
     <div class="row justify-content-center align-items-center">
       <div class="col-sm-12 col-md-3 col-xl-3" v-for="(character, index) in charactersList" :key="index">
@@ -45,15 +42,6 @@ export default {
         }
       }
       loader.hide();
-    },
-    handleChange(event) {
-      const value = event.target.value
-
-      if (value && value.length > 0) {
-        this.charactersList = this.charactersList.filter(character => character.name.includes(value))
-      } else {
-        this.mountByDb()
-      }
     }
   },
   components: {
